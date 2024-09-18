@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>Chrome调试</title>
+    <link href="/2024/09/18/Chrome%E8%B0%83%E8%AF%95/"/>
+    <url>/2024/09/18/Chrome%E8%B0%83%E8%AF%95/</url>
+    
+    <content type="html"><![CDATA[<h2 id="F12打开Chrome调试界面"><a href="#F12打开Chrome调试界面" class="headerlink" title="F12打开Chrome调试界面"></a>F12打开Chrome调试界面</h2><ol><li>Ctrl+滚轮，可以放大开发者工具代码大小。</li><li>左边是 HTML元素结构，右边是 CSS 样式。</li><li>右边 CSS 样式可以改动数值(左右箭头或者直接输入)和查看颜色，</li><li>Ctrl +0 复原浏览器大小。</li><li>如果点击元素，发现右侧没有样式引入，极有可能是类名或者样式引入错误如果有样式，但是样式前面有黄色叹号提示，则是样式属性书写错误。</li></ol><p><img src="/img/Chrome%E8%B0%83%E8%AF%95/test.png" alt="Chrome示例"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>最近的打算</title>
     <link href="/2024/09/12/%E6%9C%80%E8%BF%91%E7%9A%84%E6%89%93%E7%AE%97/"/>
     <url>/2024/09/12/%E6%9C%80%E8%BF%91%E7%9A%84%E6%89%93%E7%AE%97/</url>
