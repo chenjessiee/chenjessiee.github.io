@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>数据集自动标注</title>
+    <link href="/2024/10/24/%E6%95%B0%E6%8D%AE%E9%9B%86%E8%87%AA%E5%8A%A8%E6%A0%87%E6%B3%A8/"/>
+    <url>/2024/10/24/%E6%95%B0%E6%8D%AE%E9%9B%86%E8%87%AA%E5%8A%A8%E6%A0%87%E6%B3%A8/</url>
+    
+    <content type="html"><![CDATA[<p>任务1：Anaconda配置</p><ol><li><p>Anaconda下载，选择适合自己操作系统的版本。清华镜像：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/</a></p></li><li><p>安装Anaconda，并确保在安装过程中将Anaconda添加到系统环境变量中</p></li><li><p>验证Anaconda是否安装成功，在终端（或Anaconda Prompt）中运行以下命令并记录输出，输出应有版本号：<br> conda –version</p></li></ol><p>任务2：X-Anylabeling自动标注软件安装<br>参考博客<a href="https://blog.csdn.net/2303_80018785/article/details/139429062">https://blog.csdn.net/2303_80018785/article/details/139429062</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>快捷生成方法</title>
     <link href="/2024/09/18/%E5%BF%AB%E6%8D%B7%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/"/>
     <url>/2024/09/18/%E5%BF%AB%E6%8D%B7%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/</url>
