@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>latex使用记录</title>
+    <link href="/2024/10/31/latex%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"/>
+    <url>/2024/10/31/latex%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<ol><li>参考文献<br>在tex同级目录添加.bib文件，其中填写引用格式的bibtex<br>1.1 在导言部分加<br>\usepackage{cite}  &#x2F;&#x2F;引用要加的包<br>\usepackage[hidelinks]{hyperref} &#x2F;&#x2F;去掉引用效果绿框和链接跳转<br>\usepackage[numbers,sort&amp;compress]{natbib}&#x2F;&#x2F;多个文献引用</li></ol><p>多文献引用格式:[1,2].   \cite{label1,label2}</p><p>多文献引用格式:[1,2][1-3]只有是三片文献以上才是连字符.  \usepackage[numbers,sort&amp;compress]{natbib}我所知道的是这是一种压缩的格式.</p><p>1.2 在参考文献出现的位置<br>\bibliographystyle{unsrt} &#x2F;&#x2F;按出现顺序编号参考文献<br>\bibliography{ref}&#x2F;&#x2F;导入刚才的bib文件</p><ol start="2"><li>图片跨栏居中<br>方法：使用 figure* 环境<br>在双栏文档中，将 figure 环境替换为 figure*，并将浮动参数设为 [t] 或 [b]，以控制图片出现在页面顶部或底部。</li></ol><p>\begin{figure*}[t] % 使用 figure* 环境，并设置 [t] 或 [b] 控制位置<br>    \centering<br>    \includegraphics[width&#x3D;\textwidth]{your-image.png} % 设置图片宽度为整页宽度<br>    \caption{Your Caption}<br>    \label{fig:your-label}<br>\end{figure*}</p><ol start="3"><li>图片索引居中<br>\usepackage[caption&#x3D;true,font&#x3D;normalsize,labelfont&#x3D;sf,textfont&#x3D;sf]{subfig}<br>模板默认是false<br>caption&#x3D;true改成true就行了</li></ol><p>Tip:有时会出现编译不成功的问题，只要在空白的地方随便打打即可重新编译成功；照片的位置好像不能指定；照片可以在label重新命名。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>数据集自动标注</title>
     <link href="/2024/10/24/%E6%95%B0%E6%8D%AE%E9%9B%86%E8%87%AA%E5%8A%A8%E6%A0%87%E6%B3%A8/"/>
     <url>/2024/10/24/%E6%95%B0%E6%8D%AE%E9%9B%86%E8%87%AA%E5%8A%A8%E6%A0%87%E6%B3%A8/</url>
