@@ -1,0 +1,793 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jessie">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="全部搭建过程参考文章：https:&#x2F;&#x2F;blog.csdn.net&#x2F;yaorongke&#x2F;article&#x2F;details&#x2F;119089190 SSH设置：https:&#x2F;&#x2F;github.com&#x2F;pengwenwu&#x2F;skill-tree&#x2F;blob&#x2F;master&#x2F;Hexo&#x2F;hexo%20%2B%20github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github+hexo搭建博客详细记录">
+<meta property="og:url" content="http://chenjessiee.github.io/2024/11/05/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="全部搭建过程参考文章：https:&#x2F;&#x2F;blog.csdn.net&#x2F;yaorongke&#x2F;article&#x2F;details&#x2F;119089190 SSH设置：https:&#x2F;&#x2F;github.com&#x2F;pengwenwu&#x2F;skill-tree&#x2F;blob&#x2F;master&#x2F;Hexo&#x2F;hexo%20%2B%20github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/image1.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/image2.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/image3.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/image4.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/image5.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/image6.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/7.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/8.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/9.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/10.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/11.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/12.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/13.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/14.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/15.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/16.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/17.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/18.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/19.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/20.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/21.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/22.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/23.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/24.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/25.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/26.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/27.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/28.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/29.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/30.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/31.png">
+<meta property="og:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/32.png">
+<meta property="article:published_time" content="2024-11-05T11:47:04.000Z">
+<meta property="article:modified_time" content="2024-11-05T12:47:23.722Z">
+<meta property="article:author" content="Jessie">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://chenjessiee.github.io/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/image1.png">
+  
+  
+  
+  <title>Github+hexo搭建博客详细记录 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"chenjessiee.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"j53eV2qlmF6GT0rkk3F7mDkz-gzGzoHsz","app_key":"vmrCkYVmK5mi6y5b99FTZ2jl","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Jessie</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Github+hexo搭建博客详细记录"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-11-05 19:47" pubdate>
+          November 5, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.7k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          15 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> views
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Github+hexo搭建博客详细记录</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><strong>全部搭建过程参考文章：</strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119089190"><strong>https://blog.csdn.net/yaorongke/article/details/119089190</strong></a></p>
+<p>SSH设置：<a target="_blank" rel="noopener" href="https://github.com/pengwenwu/skill-tree/blob/master/Hexo/hexo%20%2B%20github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B.md">https://github.com/pengwenwu/skill-tree/blob/master/Hexo/hexo%20%2B%20github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B.md</a></p>
+<h3 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a><strong>一、准备工作</strong></h3><h4 id="1-注册GitHub账号"><a href="#1-注册GitHub账号" class="headerlink" title="1.   注册GitHub账号"></a><strong>1.</strong>   <strong>注册GitHub账号</strong></h4><p>首先需要有一个GitHub账号，没有的话到先到GitHub官网注册（<a target="_blank" rel="noopener" href="https://github.com/%EF%BC%89%E3%80%82">https://github.com/）。</a></p>
+<p>注册可参考GitHub申请账号教程<a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119086305">https://blog.csdn.net/yaorongke/article/details/119086305</a></p>
+<h4 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2. 安装Git"></a><strong>2.</strong> <strong>安装Git</strong></h4><p>在自己电脑上安装好Git，hexo部署到GitHub时要用。参考 Git安装(网址：<a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119085413?fromshare=blogdetail&sharetype=blogdetail&sharerId=119085413&sharerefer=PC&sharesource=weixin_62431476&sharefrom=from_link">https://blog.csdn.net/yaorongke/article/details/119085413?fromshare=blogdetail&amp;sharetype=blogdetail&amp;sharerId=119085413&amp;sharerefer=PC&amp;sharesource=weixin_62431476&amp;sharefrom=from_link</a>)</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/image1.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/image2.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<h4 id="3-安装NodeJS"><a href="#3-安装NodeJS" class="headerlink" title="3. 安装NodeJS"></a><strong>3.</strong> <strong>安装NodeJS</strong></h4><p>在自己电脑上安装好NodeJS，Hexo是基于NodeJS编写的，所以需要安装NodeJS和npm工具。可参考NodeJS安装及配置(Windows)——</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119084295?fromshare=blogdetail&sharetype=blogdetail&sharerId=119084295&sharerefer=PC&sharesource=weixin_62431476&sharefrom=from_link">https://blog.csdn.net/yaorongke/article/details/119084295?fromshare=blogdetail&amp;sharetype=blogdetail&amp;sharerId=119084295&amp;sharerefer=PC&amp;sharesource=weixin_62431476&amp;sharefrom=from_link</a></p>
+<p>我的安装具体步骤：</p>
+<h5 id="（1）下载安装包"><a href="#（1）下载安装包" class="headerlink" title="（1）下载安装包"></a><strong>（1）下载安装包</strong></h5><p>NodeJS官网下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">https://nodejs.org/zh-cn/download/</a></p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/image3.png" srcset="/img/loading.gif" lazyload alt=" "><br>下载安装包后双击安装包开始安装，一路点击Next即可，安装完成后，msi格式的安装包会自动添加环境变量。</p>
+<p>安装finish后打开cmd，执行命令node -v查看node版本</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/image4.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<p>在安装node的同时也安装了npm，执行 npm -v 查看npm版本</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/image5.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<p>成功查看后就安装完成可以正常使用了，参考文章内还有讲解修改全局包配置，但我不需要这个所以省略后半部分，有需要可访问步骤3的网址。</p>
+<h3 id="二、创建仓库"><a href="#二、创建仓库" class="headerlink" title="二、创建仓库"></a><strong>二、创建仓库</strong></h3><p><strong>1.</strong> 在GitHub上<strong>创建一个新的代码仓库</strong>用于保存我们的网页。点击<strong>Your repositories</strong>，进入仓库页面。</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/image6.png" srcset="/img/loading.gif" lazyload alt=" "><br><strong>2.</strong> <strong>点击New</strong>按钮，进入仓库创建页面。</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/7.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<p><strong>3.</strong> <strong>填写仓库名</strong>（必须与用户名一致），格式必须为&lt;用户名&gt;.github.io，然后点击Create repository。</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/8.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<p> <strong>4.</strong> <strong>点击creating a new file</strong>创建一个新文件，作为我们网站的主页。</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/9.png" srcset="/img/loading.gif" lazyload alt=" "><br><strong>5.</strong> <strong>新文件的名字必须为index.html</strong>，内容先随便写一个简单的，填写之后点击Commit new file提交。</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/10.png" srcset="/img/loading.gif" lazyload alt=" "><br>填写内容示例如下：</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/11.png" srcset="/img/loading.gif" lazyload alt=" "><br><strong>6.</strong> 在仓库页面，从上方导航栏<strong>进入“Settings”-“Pages”</strong>,找到主页的地址，示例为 <a target="_blank" rel="noopener" href="https://yaorongke.github.io/">https://yaorongke.github.io/</a></p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/12.png" srcset="/img/loading.gif" lazyload alt=" "><br><strong>7.</strong> 接下来直接访问查询到的主页地址<a target="_blank" rel="noopener" href="https://yaorongke.github.io/%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E4%B8%80%E4%B8%AA%E6%AF%94%E8%BE%83%E7%AE%80%E9%99%8B%E7%9A%84%E7%BD%91%E9%A1%B5%EF%BC%9A">https://yaorongke.github.io/，可以看到一个比较简陋的网页：</a></p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/13.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<h3 id="三、安装Hexo"><a href="#三、安装Hexo" class="headerlink" title="三、安装Hexo"></a><strong>三、安装Hexo</strong></h3><p>Hexo 是一个基于NodeJS的静态博客网站生成器，使用Hexo不需开发，只要进行一些必要的配置即可生成一个个性化的博客网站，非常方便。Hexo官网<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
+<h4 id="1-安装hexo"><a href="#1-安装hexo" class="headerlink" title="1.   安装hexo"></a><strong>1.</strong>   <strong>安装hexo</strong></h4><p>注意，<strong>第一个坑来了！</strong>——自行创建一个WorkSpace-blog目录，在该目录下安装hexo，安装hexo命令以官网为准npm install hexo-cli -g，参考文章内的命令不知道为啥不可用，归结为坑（bushi）</p>
+<p><code>npm install hexo-cli -g</code></p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/14.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<ol start="2">
+<li>安装成功后查看版本</li>
+</ol>
+<p><code>hexo -v</code></p>
+<ol start="3">
+<li>创建一个项目 hexo-blog 并初始化，</li>
+</ol>
+<p><code>hexo init blog</code></p>
+<p><code>cd blog</code></p>
+<p><code>npm install</code></p>
+<ol start="4">
+<li>本地启动</li>
+</ol>
+<p><code>hexo g</code></p>
+<p><code>hexo server</code></p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/15.png" srcset="/img/loading.gif" lazyload alt=" "><br>这里有个踩过的坑：</p>
+<p>启动失败了，原因是<strong>4000端口被占用</strong>，使用hexo s -p 8080命令<strong>更换端口</strong>.( 启动时需要在hexo-blog目录下)以自己的目录为准。</p>
+<p>​                 更换为8080端口即可成功启动                </p>
+<p>​                 启动失败，4000端口被占用                </p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/16.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<h3 id="四、更换主题"><a href="#四、更换主题" class="headerlink" title="四、更换主题"></a><strong>四、更换主题</strong></h3><h4 id="1-下载Fluid主题"><a href="#1-下载Fluid主题" class="headerlink" title="1. 下载Fluid主题"></a><strong>1.</strong> 下载Fluid主题</h4><p>  进入<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid官网</a>安装主题，<strong>点击“最新 release 版本”</strong>下滑找到<strong>“Assets”</strong>部分。</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/17.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<p>下载压缩包并解压到 “hexo-blog” – “themes” 目录，并将解压出的文件夹<strong>重命名为 fluid</strong><br><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/18.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<h4 id="2-指定主题"><a href="#2-指定主题" class="headerlink" title="2.   指定主题"></a><strong>2.</strong>   <strong>指定主题</strong></h4><p>如下修改hexo-blog目录中的 _config.yml文件的them和language（用vscode软件打开hexo-blog目录会非常好修改，后续需要执行的命令行也可以直接在vscode终端执行）：</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/19.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<p>我的vscode修改界面：<br><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/20.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<ol start="3">
+<li><h4 id="创建「关于页」"><a href="#创建「关于页」" class="headerlink" title="创建「关于页」"></a><strong>创建「关于页」</strong></h4></li>
+</ol>
+<p>首次使用主题的「关于页」需要<strong>手动创建</strong>：</p>
+<p><code>hexo new page about</code></p>
+<p>创建成功后，编辑博客目录下 &#x2F;source&#x2F;about&#x2F;index.md，<strong>添加 layout 属性</strong>。</p>
+<p>修改后的文件示例如下：<br><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/21.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<h3 id="五、发布到GitHub-Pages"><a href="#五、发布到GitHub-Pages" class="headerlink" title="五、发布到GitHub Pages"></a><strong>五、发布到GitHub Pages</strong></h3><h4 id="1-安装hexo-deployer-git"><a href="#1-安装hexo-deployer-git" class="headerlink" title="1.   安装hexo-deployer-git"></a><strong>1.</strong>   <strong>安装hexo-deployer-git</strong></h4><p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/22.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<ol start="2">
+<li>修改 hexo-blog目录下的config.yml，配置 GitHub 相关信息</li>
+</ol>
+<p>坑！</p>
+<p>配置.yml文件时，<strong>注意空格！！！</strong>否则报错</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/23.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<p>接下来两个推送方式：</p>
+<p>（1）参考文章内（如下）的配置方式部署不知道为什么一直没成功，放弃了。。。。。<br><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/24.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/25.png" srcset="/img/loading.gif" lazyload alt=" "><br>这个问题暂时没解决，推送换了ssh连接</p>
+<p>（2）换成ssh推送继续往下肝，这里开始参考开头提到的第二篇文章：[**<a target="_blank" rel="noopener" href="https://github.com/pengwenwu/skill-tree/blob/master/Hexo/hexo%20%2B%20github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B.md**]">https://github.com/pengwenwu/skill-tree/blob/master/Hexo/hexo%20%2B%20github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B.md**]</a>(<a target="_blank" rel="noopener" href="https://github.com/pengwenwu/skill-tree/blob/master/Hexo/hexo">https://github.com/pengwenwu/skill-tree/blob/master/Hexo/hexo</a> %2B github搭建个人博客教程.md)</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/26.png" srcset="/img/loading.gif" lazyload alt=" "><br><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/27.png" srcset="/img/loading.gif" lazyload alt=" "><br>以上步骤非常清晰，浅提几个点：</p>
+<p>l  一开始没有.ssh目录，执行了命令ssh-keygen -t rsa -C “my email”命令，这里我是在c:&#x2F;用户&#x2F;username&#x2F;目录下执行的，生成完成后用记事本打开id_ras.pub文件，然后Ctrl-A复制所有内容。</p>
+<p>l  接下来的github-&gt;头像-&gt;Settings→SSH kyes→Add SSH key，粘贴复制的内容。对应图片放这里：<br><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/28.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/29.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<p>l  最后的url配置的就是步骤二-7中的主页地址</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/30.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<p>l  repo的内容在仓库页面-code-SSH可以直接复制<br><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/31.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<p>l  全部修改完配置保存后执行hexo g -d，部署完成后就可以打开主页：</p>
+<p><img src="/img/Github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95/32.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<hr>
+<p>再附上之前我自己写的注意事项，记录点东西确实还是能帮上忙哦！</p>
+<ol>
+<li>Node下载，注意看是否直接下载安装程序，压缩包还不会使用。</li>
+<li>在npm运行，就是Node，下载好了cmd到folder，执行npm命令就行。</li>
+<li>注意.ignore文件，否则上传一大堆。</li>
+<li>github分支很重要，默认执行分支main，这就会出现部署到master分支，本地能成功执行hexo，但是github访问不到，去setting切换分支即可。</li>
+<li>github pages没有实时更改内容是很正常的，发布前先<code>hexo s -p 8080</code>，本地执行没问题，先使用 <code>hexo clean</code> 清除本地缓存，然后<code>hexo g -d</code>提交。</li>
+<li>新建文章很简单，<code>hexo new name</code> 即可。</li>
+<li>发布照片时，要把生成的照片文件夹放到source下的img静态资源文件夹，养成良好习惯，放在post里面无法访问。</li>
+</ol>
+<hr>
+<p>以上是我帮ie家族一员Winnie配置时遇到的问题，尽管9月份我已经配置过了，苦于没有留下详细的说明文档，导致这次踩坑很多还是要不停搜索。于是我们两人决定写一份说明文档，当然，这份保姆级别教程要感谢Winnie~  Jessie主要是技术支持哈哈哈。Winnie会来看我的主页吗，不知道，祝她找工作顺利！可爱善良的女孩呀，幸福会来敲门的！</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Github+hexo搭建博客详细记录</div>
+      <div>http://chenjessiee.github.io/2024/11/05/Github-hexo搭建博客详细记录/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Jessie</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>November 5, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/11/05/%E6%8F%90%E4%BA%A4%E6%96%B0%E6%96%87%E7%AB%A0%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" title="提交新文章注意事项">
+                        <span class="hidden-mobile">提交新文章注意事项</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        Views: 
+        <span id="leancloud-site-pv"></span>
+        
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        Visitors: 
+        <span id="leancloud-site-uv"></span>
+        
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
