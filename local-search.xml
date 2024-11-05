@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title>提交新文章注意事项</title>
+    <link href="/2024/11/05/%E6%8F%90%E4%BA%A4%E6%96%B0%E6%96%87%E7%AB%A0%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
+    <url>/2024/11/05/%E6%8F%90%E4%BA%A4%E6%96%B0%E6%96%87%E7%AB%A0%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
+    
+    <content type="html"><![CDATA[<p>突然考虑到，万一我本地源码炸了怎么办？那就直接备份一手吧，有备无患。</p><h2 id="开局报错："><a href="#开局报错：" class="headerlink" title="开局报错："></a>开局报错：</h2><p><img src="/img/%E6%8F%90%E4%BA%A4%E6%96%B0%E6%96%87%E7%AB%A0%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/image.png" alt="图片引用方法二"></p><h2 id="先去解决一下："><a href="#先去解决一下：" class="headerlink" title="先去解决一下："></a>先去解决一下：</h2><p>在本仓库，新建了一个分支blog，里面存放源码，操作步骤如下：<br>要将代码推送到 Git 仓库，以下是常规的步骤：</p><h3 id="1-确认本地仓库已初始化"><a href="#1-确认本地仓库已初始化" class="headerlink" title="1. 确认本地仓库已初始化"></a>1. 确认本地仓库已初始化</h3><p>确保你的项目已经初始化为一个 Git 仓库，并且目录中有 <code>.git</code> 文件夹。如果还没有初始化，可以运行以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git init<br></code></pre></td></tr></table></figure><h3 id="2-添加远程仓库地址"><a href="#2-添加远程仓库地址" class="headerlink" title="2. 添加远程仓库地址"></a>2. 添加远程仓库地址</h3><p>如果还没有设置远程仓库，需要将远程仓库地址添加到本地仓库。你可以用以下命令将仓库的 <code>origin</code> 设置为远程仓库地址：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote add origin &lt;仓库地址&gt;<br></code></pre></td></tr></table></figure><p>例如，使用 GitHub 上的仓库地址：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote add origin https://github.com/your-username/your-repo.git<br></code></pre></td></tr></table></figure><h3 id="3-切换到新分支"><a href="#3-切换到新分支" class="headerlink" title="3. 切换到新分支"></a>3. 切换到新分支</h3><p>创建新分支后，你可以使用 git checkout &lt;分支名&gt; 切换到该分支<br>查看分支<br>git branch</p><h3 id="4-添加文件并提交更改"><a href="#4-添加文件并提交更改" class="headerlink" title="4. 添加文件并提交更改"></a>4. 添加文件并提交更改</h3><p>将文件添加到暂存区并提交更改： </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add .<br>git commit -m <span class="hljs-string">&quot;提交信息&quot;</span><br></code></pre></td></tr></table></figure><h3 id="4-推送到远程仓库"><a href="#4-推送到远程仓库" class="headerlink" title="4. 推送到远程仓库"></a>4. 推送到远程仓库</h3><p>将代码推送到远程仓库的指定分支（通常是 <code>main</code> 或 <code>master</code> 分支）：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git push -u origin main<br></code></pre></td></tr></table></figure><blockquote><p><code>-u</code> 选项会将本地分支与远程分支关联，以后推送时只需运行 <code>git push</code>。</p></blockquote><h3 id="5-后续推送"><a href="#5-后续推送" class="headerlink" title="5. 后续推送"></a>5. 后续推送</h3><p>之后的更改只需执行以下命令即可推送：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add .<br>git commit -m <span class="hljs-string">&quot;更新信息&quot;</span><br>git push<br></code></pre></td></tr></table></figure><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>如果远程仓库有更新的代码，在推送之前先拉取最新代码：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git pull origin main<br></code></pre></td></tr></table></figure><p>推送完成后，你可以在远程仓库中查看提交的代码。<br><img src="/img/%E6%8F%90%E4%BA%A4%E6%96%B0%E6%96%87%E7%AB%A0%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/image1.png" alt="alt text"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>LeetCode-169.多数元素</title>
+    <link href="/2024/11/05/LeetCode-169-%E5%A4%9A%E6%95%B0%E5%85%83%E7%B4%A0/"/>
+    <url>/2024/11/05/LeetCode-169-%E5%A4%9A%E6%95%B0%E5%85%83%E7%B4%A0/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>如何科学上网</title>
     <link href="/2024/11/04/%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
     <url>/2024/11/04/%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</url>
