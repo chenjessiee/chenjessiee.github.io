@@ -28,7 +28,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://chenjessiee.github.io/img/LeetCode%E5%88%B7%E9%A2%98day23%E2%80%94%E2%80%94%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/1.jpg">
 <meta property="article:published_time" content="2024-12-11T13:58:07.000Z">
-<meta property="article:modified_time" content="2024-12-13T07:51:13.217Z">
+<meta property="article:modified_time" content="2024-12-13T11:24:00.739Z">
 <meta property="article:author" content="Jessie">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://chenjessiee.github.io/img/LeetCode%E5%88%B7%E9%A2%98day23%E2%80%94%E2%80%94%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/1.jpg">
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k words
+          2.7k words
         
       </span>
     
@@ -248,7 +248,7 @@
         
         
         
-          18 mins
+          23 mins
         
       </span>
     
@@ -386,6 +386,31 @@
 </ul>
 <h4 id="分析：-3"><a href="#分析：-3" class="headerlink" title="分析："></a>分析：</h4><p>![4d3c25f0b9d1914eebff841efd70fa4](C:\Users\Jessi\Documents\WeChat Files\wxid_6d1i8sgl7lzj22\FileStorage\Temp\4d3c25f0b9d1914eebff841efd70fa4.jpg)<br><img src="/img/LeetCode%E5%88%B7%E9%A2%98day23%E2%80%94%E2%80%94%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/1.jpg" srcset="/img/loading.gif" lazyload></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findTargetSumWays</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.<span class="hljs-built_in">size</span>(); i++)<br>            sum += nums[i];<br>        <span class="hljs-type">int</span> neg = sum - target;<br>        <span class="hljs-keyword">if</span> (neg &lt; <span class="hljs-number">0</span> || neg % <span class="hljs-number">2</span> != <span class="hljs-number">0</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        neg /= <span class="hljs-number">2</span>;<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">dp</span>(nums.<span class="hljs-built_in">size</span>(), <span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(neg + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>));<br>        dp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] =<br>            <span class="hljs-number">1</span>; <span class="hljs-comment">// base case, sum=0 is always 1 way (not choosing anything)</span><br>        <span class="hljs-keyword">if</span> (nums[<span class="hljs-number">0</span>] &lt;= neg)<br>            dp[<span class="hljs-number">0</span>][nums[<span class="hljs-number">0</span>]] = <span class="hljs-number">1</span>; <span class="hljs-comment">// base case, using first element</span><br>        <span class="hljs-type">int</span> numZero = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.<span class="hljs-built_in">size</span>(); i++) &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>)<br>                numZero++;<br>            dp[i][<span class="hljs-number">0</span>] = (<span class="hljs-type">int</span>)<span class="hljs-built_in">pow</span>(<span class="hljs-number">2.0</span>, numZero);<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; nums.<span class="hljs-built_in">size</span>(); i++)<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt;= neg; j++) &#123;<br>                <span class="hljs-keyword">if</span> (j &lt; nums[i])<br>                    dp[i][j] = dp[i - <span class="hljs-number">1</span>][j];<br>                <span class="hljs-keyword">else</span><br>                    dp[i][j] = dp[i - <span class="hljs-number">1</span>][j] + dp[i - <span class="hljs-number">1</span>][j - nums[i]];<br>            &#125;<br>        <span class="hljs-keyword">return</span> dp[nums.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>][neg];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h3 id="474-一和零"><a href="#474-一和零" class="headerlink" title="474. 一和零"></a>474. 一和零</h3><p>给你一个二进制字符串数组 <code>strs</code> 和两个整数 <code>m</code> 和 <code>n</code> 。</p>
+<p>请你找出并返回 <code>strs</code> 的最大子集的长度，该子集中 <strong>最多</strong> 有 <code>m</code> 个 <code>0</code> 和 <code>n</code> 个 <code>1</code> 。</p>
+<p>如果 <code>x</code> 的所有元素也是 <code>y</code> 的元素，集合 <code>x</code> 是集合 <code>y</code> 的 <strong>子集</strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs excel">输入：strs = [<span class="hljs-string">&quot;10&quot;</span>, <span class="hljs-string">&quot;0001&quot;</span>, <span class="hljs-string">&quot;111001&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;0&quot;</span>], m = <span class="hljs-number">5</span>, <span class="hljs-built_in">n</span> = <span class="hljs-number">3</span><br>输出：<span class="hljs-number">4</span><br>解释：最多有 <span class="hljs-number">5</span> 个 <span class="hljs-number">0</span> 和 <span class="hljs-number">3</span> 个 <span class="hljs-number">1</span> 的最大子集是 &#123;<span class="hljs-string">&quot;10&quot;</span>,<span class="hljs-string">&quot;0001&quot;</span>,<span class="hljs-string">&quot;1&quot;</span>,<span class="hljs-string">&quot;0&quot;</span>&#125; ，因此答案是 <span class="hljs-number">4</span> 。<br>其他满足题意但较小的子集包括 &#123;<span class="hljs-string">&quot;0001&quot;</span>,<span class="hljs-string">&quot;1&quot;</span>&#125; 和 &#123;<span class="hljs-string">&quot;10&quot;</span>,<span class="hljs-string">&quot;1&quot;</span>,<span class="hljs-string">&quot;0&quot;</span>&#125; 。&#123;<span class="hljs-string">&quot;111001&quot;</span>&#125; 不满足题意，因为它含 <span class="hljs-number">4</span> 个 <span class="hljs-number">1</span> ，大于 <span class="hljs-built_in">n</span> 的值 <span class="hljs-number">3</span> 。<br></code></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs armasm">输入：<span class="hljs-keyword">strs</span> = [<span class="hljs-string">&quot;10&quot;</span>, <span class="hljs-string">&quot;0&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>], m = <span class="hljs-number">1</span>, n = <span class="hljs-number">1</span><br>输出：<span class="hljs-number">2</span><br>解释：最大的子集是 &#123;<span class="hljs-string">&quot;0&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>&#125; ，所以答案是 <span class="hljs-number">2</span> 。<br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= strs.length &lt;= 600</code></li>
+<li><code>1 &lt;= strs[i].length &lt;= 100</code></li>
+<li><code>strs[i]</code> 仅由 <code>&#39;0&#39;</code> 和 <code>&#39;1&#39;</code> 组成</li>
+<li><code>1 &lt;= m, n &lt;= 100</code></li>
+</ul>
+<h4 id="分析：-4"><a href="#分析：-4" class="headerlink" title="分析："></a>分析：</h4><p>难，程序员何苦为难程序员。现在的物品是每一个字符串数组，<code>dp</code>的横纵坐标分别是<code>m,n</code>。</p>
+<ul>
+<li>动态规划定义：<code>dp[i][j]</code>表示最多<code>i</code>个0，<code>j</code>个1具有的最大子集个数。</li>
+<li>子问题：<code>dp[i][j]=0</code>全部初始化为0；</li>
+<li>动态规划方程：<code>dp[i][j]=max(dp[i][j],dp[i-numZero][j-numZero]+1)</code>,显然第一个参数是本物品不装进去，第二个参数是本物品装进去之后，剩余的空间能放多少。</li>
+<li>本次遍历顺序跟之前的不一样，其实应该是三维数组，但是降维之后，物品从头遍历；容量从后往当前遍历</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findMaxForm</span><span class="hljs-params">(vector&lt;string&gt;&amp; strs, <span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span> </span>&#123;<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">dp</span>(m + <span class="hljs-number">1</span>, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(n + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>));<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> k = <span class="hljs-number">0</span>; k &lt; strs.<span class="hljs-built_in">size</span>(); k++) &#123;<span class="hljs-comment">//物品在最外层</span><br>            string s = strs[k];<br>            <span class="hljs-type">int</span> numZero = <span class="hljs-number">0</span>, numOne = <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; s.<span class="hljs-built_in">size</span>(); j++) &#123;<br>                <span class="hljs-keyword">if</span> (s[j] == <span class="hljs-string">&#x27;0&#x27;</span>)<br>                    numZero++;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (s[j] == <span class="hljs-string">&#x27;1&#x27;</span>)<br>                    numOne++;<br>            &#125;<span class="hljs-comment">//统计本字符串0、1的数量</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = m; i &gt;= numZero; i--) &#123;<span class="hljs-comment">//从后往当前遍历，注意，这里是滚动数组，相当于降维处理，只能从后往前</span><br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = n; j &gt;= numOne; j--) &#123;<br>                    dp[i][j] = <span class="hljs-built_in">max</span>(dp[i][j], dp[i - numZero][j - numOne] + <span class="hljs-number">1</span>);<span class="hljs-comment">//max(不放，放+1)</span><br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[m][n];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
 
 
                 
@@ -448,6 +473,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/12/13/LeetCode%E5%88%B7%E9%A2%98day25%E2%80%94%E2%80%94%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="LeetCode刷题day25——动态规划">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LeetCode刷题day25——动态规划</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
