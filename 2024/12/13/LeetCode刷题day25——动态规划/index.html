@@ -19,17 +19,17 @@
   <meta name="author" content="Jessie">
   <meta name="keywords" content="">
   
-    <meta name="description" content="LeetCode刷题day25——动态规划子序列问题（不连续）300. 最长递增子序列给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。 子序列 是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。 示例 1： 123输入：nums &#x3D; [10,9,2,5,3,7,101,18]输出：">
+    <meta name="description" content="@toc 子序列问题（不连续）300. 最长递增子序列给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。 子序列 是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。 示例 1： 123输入：nums &#x3D; [10,9,2,5,3,7,101,18]输出：4解释：最长递增子序列是 [2,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode刷题day25——动态规划">
 <meta property="og:url" content="http://chenjessiee.github.io/2024/12/13/LeetCode%E5%88%B7%E9%A2%98day25%E2%80%94%E2%80%94%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="LeetCode刷题day25——动态规划子序列问题（不连续）300. 最长递增子序列给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。 子序列 是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。 示例 1： 123输入：nums &#x3D; [10,9,2,5,3,7,101,18]输出：">
+<meta property="og:description" content="@toc 子序列问题（不连续）300. 最长递增子序列给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。 子序列 是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。 示例 1： 123输入：nums &#x3D; [10,9,2,5,3,7,101,18]输出：4解释：最长递增子序列是 [2,">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-home.csdnimg.cn/images/20230724024159.png?origin_url=C:%5CUsers%5CJessi%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20241213205859100.png&pos_id=img-aDlkVFWS-1734096978697">
 <meta property="og:image" content="https://i-blog.csdnimg.cn/img_convert/95415ddf30cda8f56e53a6638537c38d.png">
 <meta property="article:published_time" content="2024-12-13T13:39:28.000Z">
-<meta property="article:modified_time" content="2024-12-13T13:40:10.111Z">
+<meta property="article:modified_time" content="2024-12-16T09:45:20.583Z">
 <meta property="article:author" content="Jessie">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://img-home.csdnimg.cn/images/20230724024159.png?origin_url=C:%5CUsers%5CJessi%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20241213205859100.png&pos_id=img-aDlkVFWS-1734096978697">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k words
+          2.4k words
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          18 mins
+          20 mins
         
       </span>
     
@@ -300,7 +300,8 @@
             
               <div class="markdown-body">
                 
-                <h1 id="LeetCode刷题day25——动态规划"><a href="#LeetCode刷题day25——动态规划" class="headerlink" title="LeetCode刷题day25——动态规划"></a>LeetCode刷题day25——动态规划</h1><h2 id="子序列问题（不连续）"><a href="#子序列问题（不连续）" class="headerlink" title="子序列问题（不连续）"></a>子序列问题（不连续）</h2><h3 id="300-最长递增子序列"><a href="#300-最长递增子序列" class="headerlink" title="300. 最长递增子序列"></a>300. 最长递增子序列</h3><p>给你一个整数数组 <code>nums</code> ，找到其中最长严格递增子序列的长度。</p>
+                <p>@<a href="LeetCode%E5%88%B7%E9%A2%98day25%E2%80%94%E2%80%94%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">toc</a></p>
+<h2 id="子序列问题（不连续）"><a href="#子序列问题（不连续）" class="headerlink" title="子序列问题（不连续）"></a>子序列问题（不连续）</h2><h3 id="300-最长递增子序列"><a href="#300-最长递增子序列" class="headerlink" title="300. 最长递增子序列"></a>300. 最长递增子序列</h3><p>给你一个整数数组 <code>nums</code> ，找到其中最长严格递增子序列的长度。</p>
 <p><strong>子序列</strong> 是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，<code>[3,6,2,7]</code> 是数组 <code>[0,3,1,6,2,2,7]</code> 的子序列。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dns">输入：nums = [<span class="hljs-number">10,9,2,5</span>,<span class="hljs-number">3,7,101,18</span>]<br>输出：<span class="hljs-number">4</span><br>解释：最长递增子序列是 [<span class="hljs-number">2,3,7,101</span>]，因此长度为 <span class="hljs-number">4</span> 。<br></code></pre></td></tr></table></figure>
@@ -384,7 +385,7 @@
 <p>其次，连起来。但是，如何保证不交叉？假设你选中的是 <code>nums1[i]</code> 和 <code>nums2[j]</code> 之间的连接。如果你再选中 <code>nums1[k]</code> 和 <code>nums2[l]</code> 之间的连接，那么只有 <code>i &lt; k</code> 且 <code>j &lt; l</code> 时，它们才是合法的。也就是说，第二条线的起点和终点必须在第一条线的起点和终点之后。有点难吧？但是，<strong>最长公共子序列（LCS）</strong>天然就满足这个条件。是的，这个题的代码和上一题一样，啥也没改。。。。。shit</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">maxUncrossedLines</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums1, vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums2)</span> </span>&#123;<br>        <span class="hljs-type">int</span> m = nums<span class="hljs-number">1.</span><span class="hljs-built_in">size</span>(), n = nums<span class="hljs-number">2.</span><span class="hljs-built_in">size</span>();<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">dp</span>(m + <span class="hljs-number">1</span>, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(n + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>));<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt;= n; j++) &#123;<br>                <span class="hljs-keyword">if</span> (nums1[i - <span class="hljs-number">1</span>] == nums2[j - <span class="hljs-number">1</span>])<br>                    dp[i][j] = dp[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">else</span><br>                    dp[i][j] = <span class="hljs-built_in">max</span>(dp[i - <span class="hljs-number">1</span>][j], dp[i][j - <span class="hljs-number">1</span>]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[m][n];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
-<h2 id="子序列问题（连续）"><a href="#子序列问题（连续）" class="headerlink" title="子序列问题（连续）"></a>子序列问题（连续）</h2><h3 id="674-最长连续递增序列-14号补）"><a href="#674-最长连续递增序列-14号补）" class="headerlink" title="674. 最长连续递增序列(14号补）"></a>674. 最长连续递增序列(14号补）</h3><p>(<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-continuous-increasing-subsequence/">https://leetcode.cn/problems/longest-continuous-increasing-subsequence/</a>)</p>
+<h2 id="子序列问题（连续）"><a href="#子序列问题（连续）" class="headerlink" title="子序列问题（连续）"></a>子序列问题（连续）</h2><h3 id="674-最长连续递增序列-16号补完）"><a href="#674-最长连续递增序列-16号补完）" class="headerlink" title="674. 最长连续递增序列(16号补完）"></a>674. 最长连续递增序列(16号补完）</h3><p>(<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-continuous-increasing-subsequence/">https://leetcode.cn/problems/longest-continuous-increasing-subsequence/</a>)</p>
 <p>给定一个未经排序的整数数组，找到最长且 <strong>连续递增的子序列</strong>，并返回该序列的长度。</p>
 <p><strong>连续递增的子序列</strong> 可以由两个下标 <code>l</code> 和 <code>r</code>（<code>l &lt; r</code>）确定，如果对于每个 <code>l &lt;= i &lt; r</code>，都有 <code>nums[i] &lt; nums[i + 1]</code> ，那么子序列 <code>[nums[l], nums[l + 1], ..., nums[r - 1], nums[r]]</code> 就是连续递增子序列。</p>
 <p><strong>示例 1：</strong></p>
@@ -398,7 +399,15 @@
 <li><code>1 &lt;= nums.length &lt;= 104</code></li>
 <li><code>-109 &lt;= nums[i] &lt;= 109</code></li>
 </ul>
-<h4 id="分析：-3"><a href="#分析：-3" class="headerlink" title="分析："></a>分析：</h4><h3 id="718-最长重复子数组-14号补）"><a href="#718-最长重复子数组-14号补）" class="headerlink" title="718. 最长重复子数组(14号补）"></a>718. 最长重复子数组(14号补）</h3><p>(<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-length-of-repeated-subarray/">https://leetcode.cn/problems/maximum-length-of-repeated-subarray/</a>)</p>
+<h4 id="分析：-3"><a href="#分析：-3" class="headerlink" title="分析："></a>分析：</h4><p>贪心法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findLengthOfLCIS</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> i=<span class="hljs-number">0</span>,j=<span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> maxLen=<span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">while</span>(i&lt;nums.<span class="hljs-built_in">size</span>()&amp;&amp;j&lt;nums.<span class="hljs-built_in">size</span>())&#123;<br>            <span class="hljs-type">int</span> pre=nums[i];<br>            <span class="hljs-keyword">while</span>(j&lt;nums.<span class="hljs-built_in">size</span>()&amp;&amp;pre&lt;nums[j]) &#123;<br>                pre = nums[j];<br>                j++;<br>            &#125;<br>            maxLen=<span class="hljs-built_in">max</span>(maxLen,j-i);<br>            i=j++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> maxLen==<span class="hljs-number">0</span>?<span class="hljs-number">1</span>:maxLen;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<p>动态规划法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findLengthOfLCIS</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(nums.size(), <span class="hljs-number">0</span>)</span></span>;<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> result = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; nums.<span class="hljs-built_in">size</span>(); i++) &#123;<br>            <span class="hljs-keyword">if</span>(nums[i] &gt; nums[i<span class="hljs-number">-1</span>])<br>                dp[i] = <span class="hljs-number">1</span> + dp[i<span class="hljs-number">-1</span>];<br>            <span class="hljs-keyword">else</span><br>                dp[i] = <span class="hljs-number">1</span>;<br>            result = <span class="hljs-built_in">max</span>(result, dp[i]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="718-最长重复子数组-16号补完）"><a href="#718-最长重复子数组-16号补完）" class="headerlink" title="718. 最长重复子数组(16号补完）"></a>718. 最长重复子数组(16号补完）</h3><p>(<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-length-of-repeated-subarray/">https://leetcode.cn/problems/maximum-length-of-repeated-subarray/</a>)</p>
 <p>给两个整数数组 <code>nums1</code> 和 <code>nums2</code> ，返回 <em>两个数组中 <strong>公共的</strong> 、长度最长的子数组的长度</em> 。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：nums1 = <span class="hljs-comment">[1,2,3,2,1]</span>, nums2 = <span class="hljs-comment">[3,2,1,4,7]</span><br>输出：3<br>解释：长度最长的公共子数组是 <span class="hljs-comment">[3,2,1]</span> 。<br></code></pre></td></tr></table></figure>
@@ -411,7 +420,14 @@
 <li><code>1 &lt;= nums1.length, nums2.length &lt;= 1000</code></li>
 <li><code>0 &lt;= nums1[i], nums2[i] &lt;= 100</code></li>
 </ul>
-<h4 id="分析：-4"><a href="#分析：-4" class="headerlink" title="分析："></a>分析：</h4><h3 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h3><p>(<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/">https://leetcode.cn/problems/maximum-subarray/</a>)</p>
+<h4 id="分析：-4"><a href="#分析：-4" class="headerlink" title="分析："></a>分析：</h4><h4 id="分析：-5"><a href="#分析：-5" class="headerlink" title="分析："></a>分析：</h4><p>贪心法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findLengthOfLCIS</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> i=<span class="hljs-number">0</span>,j=<span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> maxLen=<span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">while</span>(i&lt;nums.<span class="hljs-built_in">size</span>()&amp;&amp;j&lt;nums.<span class="hljs-built_in">size</span>())&#123;<br>            <span class="hljs-type">int</span> pre=nums[i];<br>            <span class="hljs-keyword">while</span>(j&lt;nums.<span class="hljs-built_in">size</span>()&amp;&amp;pre&lt;nums[j]) &#123;<br>                pre = nums[j];<br>                j++;<br>            &#125;<br>            maxLen=<span class="hljs-built_in">max</span>(maxLen,j-i);<br>            i=j++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> maxLen==<span class="hljs-number">0</span>?<span class="hljs-number">1</span>:maxLen;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<p>动态规划法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findLengthOfLCIS</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(nums.size(), <span class="hljs-number">0</span>)</span></span>;<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> result = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; nums.<span class="hljs-built_in">size</span>(); i++) &#123;<br>            <span class="hljs-keyword">if</span>(nums[i] &gt; nums[i<span class="hljs-number">-1</span>])<br>                dp[i] = <span class="hljs-number">1</span> + dp[i<span class="hljs-number">-1</span>];<br>            <span class="hljs-keyword">else</span><br>                dp[i] = <span class="hljs-number">1</span>;<br>            result = <span class="hljs-built_in">max</span>(result, dp[i]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+
+<h3 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h3><p>(<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/">https://leetcode.cn/problems/maximum-subarray/</a>)</p>
 <p>给你一个整数数组 <code>nums</code> ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
 <p><strong>子数组</strong>是数组中的一个连续部分。</p>
 <p><strong>示例 1：</strong></p>
@@ -429,7 +445,7 @@
 <li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
 </ul>
 <p><strong>进阶：</strong>如果你已经实现复杂度为 <code>O(n)</code> 的解法，尝试使用更为精妙的 <strong>分治法</strong> 求解。</p>
-<h4 id="分析：-5"><a href="#分析：-5" class="headerlink" title="分析："></a>分析：</h4><p>似曾相识，贪心法做过，附上代码</p>
+<h4 id="分析：-6"><a href="#分析：-6" class="headerlink" title="分析："></a>分析：</h4><p>似曾相识，贪心法做过，附上代码</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">maxSubArray</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> maxSum = INT_MIN;<br>        <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.<span class="hljs-built_in">size</span>(); i++) &#123;<br>            sum+=nums[i];<br>            maxSum = <span class="hljs-built_in">max</span>(sum, maxSum);<br>            <span class="hljs-keyword">if</span>(sum&lt;<span class="hljs-number">0</span>) sum=<span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> maxSum;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
 <p>现在来尝试动态规划，天才啊，十分钟，成功！！！</p>
@@ -500,6 +516,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/12/16/LeetCode%E5%88%B7%E9%A2%98day26%E2%80%94%E2%80%94%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="LeetCode刷题day26——动态规划">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LeetCode刷题day26——动态规划</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
